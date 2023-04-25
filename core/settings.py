@@ -114,7 +114,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+STATIC_URL = 'static/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 if not DEBUG:    # Tell Django to copy statics to the `staticfiles` direct°°ory
@@ -123,8 +123,10 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` direct°°or
     # Turn on WhiteNoise storage backend that takes care of compressing static files
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_URL = 'static/'
 
+STATICFILES_DIRS =[
+    'static'
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
